@@ -2,8 +2,6 @@
 
 namespace Gem_Hunters
 {
-    
-
     class Program
     {
         static void Main(string[] args)
@@ -12,8 +10,5 @@ namespace Gem_Hunters
             game.Start();
         }
     }
-
-
-
 }
 
