@@ -8,11 +8,11 @@ namespace Gem_Hunters
 {
     public class Board
     {
-        public Cell[,] Grid { get; set; }
+        public Cell[,] Grid { get; set; }       // Defines a 2D array property 'Grid' of type 'Cell'
 
-        public Board(Player player1, Player player2)
+        public Board(Player player1, Player player2) //Constructor
         {
-            Grid = new Cell[6, 6];
+            Grid = new Cell[6, 6];              //Initalizes a 6x6 'Grid' of 'Cell' objects
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 6; j++)
@@ -27,19 +27,19 @@ namespace Gem_Hunters
 
         public void SetPlayers(Player player1, Player player2)
         {
-            Grid[player1.Position.X, player1.Position.Y].Occupant = player1.Name;
-            Grid[player2.Position.X, player2.Position.Y].Occupant = player2.Name;
+            Grid[player1.Position.X, player1.Position.Y].Occupant = player1.Name; // sets player1 at its position on the board
+            Grid[player2.Position.X, player2.Position.Y].Occupant = player2.Name;   //sets the position of player2 on the board
         }
 
-        public void SetGems(int gemCount)
+        public void SetGems(int gemCount)                   //Places a specified number of gems (gemCount) randomly on the board.
         {
-            Random rand = new Random();
+            Random rand = new Random();                     //Uses a Random object to generate random coordinates within the 6x6 grid.
             int placed = 0;
             while (placed < gemCount)
             {
-                int x = rand.Next(6);
+                int x = rand.Next(6);   
                 int y = rand.Next(6);
-                if (Grid[x, y].Occupant == "-")
+                if (Grid[x, y].Occupant == "-")             //Checks if the cell at the generated coordinates is unoccupied ("-"), then places a gem ("G") there.
                 {
                     Grid[x, y].Occupant = "G";
                     placed++;
@@ -63,7 +63,7 @@ namespace Gem_Hunters
             }
         }
 
-        public void Display()
+        public void Display()               // Display method to display the board and iterate over the 6x6 grid and print the occupant of each cell.
         {
             for (int i = 0; i < 6; i++)
             {
@@ -104,10 +104,10 @@ namespace Gem_Hunters
 
         public void CollectGem(Player player)
         {
-            if (Grid[player.Position.X, player.Position.Y].Occupant == "G")
+            if (Grid[player.Position.X, player.Position.Y].Occupant == "G")     //Allows a player to collect a gem if they are on a cell containing a gem ("G").
             {
-                player.GemCount++;
-                Grid[player.Position.X, player.Position.Y].Occupant = "-";
+                player.GemCount++;                                              //Increments the player's gem count.
+                Grid[player.Position.X, player.Position.Y].Occupant = "-";      //Removes the gem from the cell by setting the occupant to "-".
             }
         }
     }
