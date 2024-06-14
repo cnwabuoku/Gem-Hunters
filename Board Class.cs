@@ -86,11 +86,6 @@ namespace Gem_Hunters
                 case 'R': newY++; break;
                 case 'U': newX--; break;
                 case 'D': newX++; break;
-
-                // case 'U': newY-= 1; break;
-                // case 'D': newY+= 1; break;
-                // case 'L': newX-= 1; break;
-                // case 'R': newX+= 1; break;
             }
 
             if (newX < 0 || newX >= 6 || newY < 0 || newY >= 6)

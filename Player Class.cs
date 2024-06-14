@@ -20,59 +20,10 @@ namespace Gem_Hunters
             GemCount = 0;       // initializes the gemcount property to 0
         }
 
-        /**public void Move(char direction)
-        {
-            switch (direction)
-            {
-                case 'U': // Move up
-                    Position.Y = Math.Max(Position.Y - 1, 0);
-                    break;
-                case 'D': // Move down
-                    Position.Y = Math.Min(Position.Y + 1, 5);
-                    break;
-                case 'L': // Move left
-                    Position.X = Math.Max(Position.X - 1, 0);
-                    break;
-                case 'R': // Move right
-                    Position.X = Math.Min(Position.X + 1, 5);
-                    break;
-                default:
-                    Console.WriteLine("Invalid move direction. Use 'U', 'D', 'L', or 'R'.");
-                    break;
-            }
-        }**/
-
-        /**public void Move(char direction)
-        {
-            switch (direction)
-            {
-                case 'U': // Move left
-                    Position.X = Math.Max(Position.X - 1, 0);
-                    break;
-                case 'D': // Move right
-                    Position.X = Math.Min(Position.X + 1, 5);
-                    break;
-                case 'L': // Move up
-                    Position.Y = Math.Max(Position.Y - 1, 0);
-                    break;
-                case 'R': // Move down
-                    Position.Y = Math.Min(Position.Y + 1, 5);
-                    break;
-                default:
-                    Console.WriteLine("Invalid move direction. Use 'U', 'D', 'L', or 'R'.");
-                    break;
-            }
-        }**/
-
         public void Move(char direction)
         {
             switch (direction)
             {
-                // case 'U': Position.Y -= 1; break;
-                // case 'D': Position.Y += 1; break;
-                // case 'L': Position.Y -= 1; break;
-                // case 'R': Position.Y += 1; break;
-
                 case 'L': Position.Y = Math.Max(Position.Y - 1, 0); break;
                 case 'R': Position.Y = Math.Min(Position.Y + 1, 5); break;
                 case 'U': Position.X = Math.Max(Position.X - 1, 0); break;
