@@ -12,7 +12,7 @@ namespace Gem_Hunters
 
         public Cell()
         {
-            Occupant = "-";
+            Occupant = "-";         //Initializes the Occupant property to the string "-", indicating that the cell is empty or unoccupied.
         }
     }
 }

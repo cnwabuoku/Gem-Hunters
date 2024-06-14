@@ -16,8 +16,8 @@ namespace Gem_Hunters
 
         public Game()
         {
-            Player1 = new Player("P1", new Position(0, 0));
-            Player2 = new Player("P2", new Position(5, 5));
+            Player1 = new Player("P1", new Position(0, 0));     //initializes starting position of P1
+            Player2 = new Player("P2", new Position(5, 5));     //initializes starting position of P2
             Board = new Board(Player1, Player2);
             CurrentTurn = Player1;
             TotalTurns = 0;
@@ -28,8 +28,8 @@ namespace Gem_Hunters
             while (!IsGameOver())
             {
                 Board.Display();
-                Console.WriteLine($"{CurrentTurn.Name}'s turn. Gems collected: {CurrentTurn.GemCount}");
-                Console.Write("Enter your move (U, D, L, R): ");
+                Console.WriteLine($"\n{CurrentTurn.Name}'s turn. Gems collected: {CurrentTurn.GemCount}");
+                Console.Write("\nEnter your move (U, D, L, R): ");
                 char move = Char.ToUpper(Console.ReadKey().KeyChar);
                 Console.WriteLine();
 
@@ -46,27 +46,27 @@ namespace Gem_Hunters
                     Console.WriteLine("Invalid move. Try again.");
                 }
 
-                TotalTurns++;
+                TotalTurns++;       //Increments TotalTurns after each turn
             }
 
-            AnnounceWinner();
+            AnnounceWinner();       //Calls AnnounceWinner method when the game ends.
         }
 
         public void SwitchTurn()
         {
-            CurrentTurn = CurrentTurn == Player1 ? Player2 : Player1;
+            CurrentTurn = CurrentTurn == Player1 ? Player2 : Player1;       //Switches the current turn to the other player.
         }
 
         public bool IsGameOver()
         {
-            return TotalTurns >= 30;
+            return TotalTurns >= 30;        //Returns true if the total number of turns is 30 or more, indicating the game is over.
         }
 
         public void AnnounceWinner()
         {
             Console.WriteLine("Game over!");
             Board.Display();
-            Console.WriteLine($"{Player1.Name} collected {Player1.GemCount} gems.");
+            Console.WriteLine($"\n{Player1.Name} collected {Player1.GemCount} gems.");
             Console.WriteLine($"{Player2.Name} collected {Player2.GemCount} gems.");
 
             if (Player1.GemCount > Player2.GemCount)
@@ -79,7 +79,7 @@ namespace Gem_Hunters
             }
             else
             {
-                Console.WriteLine("It's a tie!");
+                Console.WriteLine("\nIt's a tie!");
             }
         }
     }
