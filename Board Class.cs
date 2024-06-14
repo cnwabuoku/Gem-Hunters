@@ -82,10 +82,10 @@ namespace Gem_Hunters
 
             switch (direction)
             {
-                case 'U': newY--; break;
-                case 'D': newY++; break;
-                case 'L': newX--; break;
-                case 'R': newX++; break;
+                case 'L': newY--; break;
+                case 'R': newY++; break;
+                case 'U': newX--; break;
+                case 'D': newX++; break;
 
                 // case 'U': newY-= 1; break;
                 // case 'D': newY+= 1; break;

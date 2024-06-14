@@ -73,10 +73,10 @@ namespace Gem_Hunters
                 // case 'L': Position.Y -= 1; break;
                 // case 'R': Position.Y += 1; break;
 
-                case 'U': Position.Y = Math.Max(Position.Y - 1, 0); break;
-                case 'D': Position.Y = Math.Min(Position.Y + 1, 5); break;
-                case 'L': Position.X = Math.Max(Position.X - 1, 0); break;
-                case 'R': Position.X = Math.Min(Position.X + 1, 5); break;
+                case 'L': Position.Y = Math.Max(Position.Y - 1, 0); break;
+                case 'R': Position.Y = Math.Min(Position.Y + 1, 5); break;
+                case 'U': Position.X = Math.Max(Position.X - 1, 0); break;
+                case 'D': Position.X = Math.Min(Position.X + 1, 5); break;
             }
         }
     }
