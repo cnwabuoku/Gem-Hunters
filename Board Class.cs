@@ -20,18 +20,18 @@ namespace Gem_Hunters
                     Grid[i, j] = new Cell();
                 }
             }
-            PlacePlayers(player1, player2);
-            PlaceGems(5); // Place 5 gems
-            PlaceObstacles(5); // Place 5 obstacles
+            SetPlayers(player1, player2);
+            SetGems(5); // Place 5 gems
+            SetObstacles(5); // Place 5 obstacles
         }
 
-        public void PlacePlayers(Player player1, Player player2)
+        public void SetPlayers(Player player1, Player player2)
         {
             Grid[player1.Position.X, player1.Position.Y].Occupant = player1.Name;
             Grid[player2.Position.X, player2.Position.Y].Occupant = player2.Name;
         }
 
-        public void PlaceGems(int gemCount)
+        public void SetGems(int gemCount)
         {
             Random rand = new Random();
             int placed = 0;
@@ -47,7 +47,7 @@ namespace Gem_Hunters
             }
         }
 
-        public void PlaceObstacles(int obstacleCount)
+        public void SetObstacles(int obstacleCount)
         {
             Random rand = new Random();
             int placed = 0;
@@ -86,6 +86,11 @@ namespace Gem_Hunters
                 case 'D': newY++; break;
                 case 'L': newX--; break;
                 case 'R': newX++; break;
+
+                // case 'U': newY-= 1; break;
+                // case 'D': newY+= 1; break;
+                // case 'L': newX-= 1; break;
+                // case 'R': newX+= 1; break;
             }
 
             if (newX < 0 || newX >= 6 || newY < 0 || newY >= 6)

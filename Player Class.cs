@@ -8,15 +8,16 @@ namespace Gem_Hunters
 {
     public class Player
     {
-        public string Name { get; set; }
-        public Position Position { get; set; }
-        public int GemCount { get; set; }
+        public string Name { get; set; }    // Name property of type string 
+        public Position Position { get; set; } //Position property of type Position (a custum class defined in "Position Class.cs")
+        public int GemCount { get; set; }   // Gemcount property of type int
 
+        // Constructor
         public Player(string name, Position position)
         {
             Name = name;
             Position = position;
-            GemCount = 0;
+            GemCount = 0;       // initializes the gemcount property to 0
         }
 
         /**public void Move(char direction)
@@ -67,6 +68,11 @@ namespace Gem_Hunters
         {
             switch (direction)
             {
+                // case 'U': Position.Y -= 1; break;
+                // case 'D': Position.Y += 1; break;
+                // case 'L': Position.Y -= 1; break;
+                // case 'R': Position.Y += 1; break;
+
                 case 'U': Position.Y = Math.Max(Position.Y - 1, 0); break;
                 case 'D': Position.Y = Math.Min(Position.Y + 1, 5); break;
                 case 'L': Position.X = Math.Max(Position.X - 1, 0); break;
